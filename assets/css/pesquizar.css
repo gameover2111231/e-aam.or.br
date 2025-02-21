@@ -1,0 +1,74 @@
+
+.main {
+    display: block;
+    text-align: center;
+    padding: 50px 20px;
+    align-items: center;
+}
+.main h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+}
+.main h1 span {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0 10px;
+}
+.main p {
+    color: #000000;
+    margin-bottom: 20px;
+}
+.main .note {
+    color: #000000;
+    margin-bottom: 40px;
+}
+.form-container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-container .form-group {
+    margin-bottom: 20px;
+}
+.form-container label {
+    display: block;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.form-container select,
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+}
+.form-container .form-group.inline {
+    display: flex;
+    justify-content: space-between;
+}
+.form-container .form-group.inline .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+.form-container .form-group.inline .form-group:last-child {
+    margin-right: 0;
+}
+.form-container .captcha {
+    display: flex;
+    align-items: center;
+}
+.form-container .captcha img {
+    margin-right: 20px;
+}
+.form-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

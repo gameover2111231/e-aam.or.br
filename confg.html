@@ -1,0 +1,215 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiárioAdm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex flex-col lg:flex-row h-screen">
+        <!-- Sidebar -->
+        <div class="bg-gray-800 text-white w-full lg:w-64 flex flex-col">
+            <div class="bg-blue-600 p-4">
+                <h1 class="text-xl font-bold">Diário<span class="font-light">Adm</span></h1>
+            </div>
+            <nav class="flex-1 p-4">
+                <ul>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-home mr-2"></i> Início</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-cog mr-2"></i> Configuração</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-flag mr-2"></i> Estados</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-city mr-2"></i> Municípios</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-users mr-2"></i> Usuários</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-building mr-2"></i> Órgãos</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-upload mr-2"></i> Uploads</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-file-alt mr-2"></i> Tipos de Publicações</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-newspaper mr-2"></i> Publicações</a></li>
+                    <li class="mb-2 ml-4"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-lock mr-2"></i> Publicações Fechadas</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-chart-bar mr-2"></i> Relatórios</a></li>
+                    <li class="mb-2 ml-4"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-user-shield mr-2"></i> Auditoria de Usuários</a></li>
+                    <li class="mb-2"><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i class="fas fa-key mr-2"></i> Alterar Minha Senha</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <header class="bg-blue-600 text-white p-4 flex justify-between items-center">
+                <h2 class="text-xl">Publicações</h2>
+                <div class="flex items-center">
+                    <span class="mr-2">Sair</span>
+                    <i class="fas fa-power-off"></i>
+                </div>
+            </header>
+            <style>
+               
+                .container {
+                  max-width: 1700px;
+                  margin: 0 auto;
+                  padding: 20px;
+                  height: 100px;
+                }
+                .card {
+                  background-color: #ffffff;
+                  box-shadow: 0 4px 6px rgba(5, 5, 5, 0.1);
+                  border-radius: 8px;
+                  padding: 20px;
+                
+                }
+                .header {
+                  display: flex;
+                  align-items: center;
+                  border-bottom: 1px solid #e2e8f0;
+                  padding-bottom: 10px;
+                  margin-bottom: 20px;
+                }
+                .header i {
+                  font-size: 24px;
+                  color: #4a5568;
+                  margin-right: 10px;
+                }
+                .header h1 {
+                  font-size: 24px;
+                  font-weight: 600;
+                  color: #4a5568;
+                }
+                .header p {
+                  margin-left: 10px;
+                  color: #a0aec0;
+                }
+                .section-title {
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #4a5568;
+                  margin-bottom: 20px;
+                }
+                .form-group {
+                  margin-bottom: 20px;
+                }
+                .form-group label {
+                  display: block;
+                  font-weight: 500;
+                  color: #4a5568;
+                  margin-bottom: 5px;
+                }
+                .form-group input,
+                .form-group textarea {
+                  width: 100%;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 10px;
+                }
+                .form-group input[type="file"] {
+                  padding: 0;
+                }
+                .form-group img {
+                  margin-top: 10px;
+                }
+                .form-group a {
+                  color: #4299e1;
+                  margin-top: 10px;
+                  display: inline-block;
+                }
+                .form-group .checkbox-group {
+                  display: flex;
+                  align-items: center;
+                }
+                .form-group .checkbox-group input {
+                  margin-right: 10px;
+                }
+                .form-group .checkbox-group label {
+                  font-weight: 500;
+                  color: #4a5568;
+                }
+                .form-group .checkbox-group p {
+                  color: #a0aec0;
+                  font-size: 14px;
+                }
+                .button-group {
+                  display: flex;
+                  justify-content: flex-end;
+                  margin-top: 20px;
+                }
+                .button-group button {
+                  padding: 10px 20px;
+                  border-radius: 8px;
+                  font-weight: 500;
+                }
+                .button-group .save-button {
+                  background-color: #48bb78;
+                  color: #ffffff;
+                  margin-right: 10px;
+                }
+                .button-group .back-button {
+                  background-color: #e2e8f0;
+                  color: #4a5568;
+                }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="card">
+                  <div class="header">
+                    <i class="fas fa-cog"></i>
+                    <h1>Configurações</h1>
+                    <p>Faça as configurações necessárias para o sistema operar</p>
+                  </div>
+                  <h2 class="section-title">Gerenciar Configurações</h2>
+                  <div class="form-group">
+                    <label>Título do Site</label>
+                    <input type="text" value="Diário Oficial Eletrônico dos Municípios do Estado do Amazonas"/>
+                  </div>
+                  <div class="form-group">
+                    <label>Mínimo de Dias Para Publicação</label>
+                    <input type="number" value="1"/>
+                  </div>
+                  <div class="form-group">
+                    <label>Endereço no rodapé</label>
+                    <input type="text" value="Rua Elin Vintoren, Nº 25 – Conjunto Shangrilá II – Bairro: Parque Dez de Novembro | Manaus-AM | CEP: 69054-694"/>
+                  </div>
+                  <div class="form-group">
+                    <label>Data da Virada (Dia em que este diário começa a ser utilizado)</label>
+                    <input type="date" value="2020-02-03"/>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <input type="checkbox" checked/>
+                    <label>Obriga publicação até às 18 horas</label>
+                  </div>
+                  <p class="text-gray-500 text-sm">Este item deve ficar marcado sempre que possível. Ao desmarcar, os publicadores poderão enviar publicações após às 18 horas.</p>
+                  <div class="form-group">
+                    <label>Logotipo</label>
+                    <input type="file"/>
+                    <img src="https://placehold.co/100x100" alt="Placeholder for logo" width="100" height="100"/>
+                  </div>
+                  <div class="form-group">
+                    <label>Arquivo de Legislação</label>
+                    <input type="file"/>
+                    <a href="#">Visualizar</a>
+                  </div>
+                  <div class="form-group">
+                    <label>Informações de Expediente</label>
+                    <textarea rows="10">
+            Câmaras Municipais:
+            RAIMUNDO PAULINO DE ALMEIDA GRANA
+            Prefeito Municipal de Silves
+            Terceiro Suplente
+            RAIMUNDO RENATO RODRIGUES AFONSO
+            Prefeito Municipal de Pauini
+            
+            MUNICÍPIOS UNIDOS ESTADO FORTALECIDO
+            O Diário Oficial dos Municípios do Estado do Amazonas é uma solução voltada à modernização e transparência da gestão municipal.
+                    </textarea>
+                  </div>
+                  <div class="button-group">
+                    <button class="save-button">Salvar</button>
+                    <button class="back-button">Voltar</button>
+                  </div>
+                </div>
+              </div>
+             </div>
+                 </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
